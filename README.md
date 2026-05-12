@@ -1,54 +1,41 @@
 # Домашнее задание к занятию "Уязвимости и атаки на информационные системы" - `Вялов Владислав`
 
-## Задание 0
-![alt text](img/13.jpg)
-
 
 ## Задание 1
 
-![alt text](img/16.jpg)
+### 1.0 
+ ![alt text](img/1.jpg)
 
-![alt text](img/17.jpg)
+ ### 1.2
 
-![alt text](img/18.jpg)
+ Согласно .gitignore, для личной информации (логины, пароли, токены) допустимо использовать terraform.tfvars или любые файлы с расширением *.auto.tfvars
 
-![alt text](img/19.jpg)
+ ### 1.3
 
+ ![alt text](img/2.jpg)
 
-## Задание 3
+  ### 1.4
 
-![alt text](img/1.jpg)
+  ![alt text](img/3.jpg)
 
-## Задание 4 
+  ![alt text](img/4.jpg)
 
-![alt text](img/14.jpg)
+После раскоментирования блока кода, при выполнении команды terraform validate получаем две ошибки:
+1. Необходимо задать два значения (type, name) для resource
+2. Ошибка в названии resource "docker_container" "1nginx" - имя должно начинаться с буквы или символа нижнего подчеркивания.
 
-![alt text](img/15.jpg)
+ ### 1.5
 
+ ![alt text](img/5.jpg)
 
-https://github.com/vvyalov/shvirtd-example-python.git
+  ### 1.6
 
-## Задание 6
-
-![alt text](img/2.jpg)
-
-![alt text](img/3.jpg)
-
-
-![alt text](img/4.jpg)
+  ![alt text](img/6.jpg)
 
 
-![alt text](img/5.jpg)
+  resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true 
+}
 
-
-![alt text](img/6.jpg)
-
-![alt text](img/7.jpg)
-
-## Задание 6.1
-
-![alt text](img/10.jpg)
-
-![alt text](img/11.jpg)
-
-![alt text](img/12.jpg)
+keep_locally Если значение true, то изображение Docker не будет удалено при операции destroy. Если значение false, то изображение будет удалено из локального хранилища docker при операции destroy
